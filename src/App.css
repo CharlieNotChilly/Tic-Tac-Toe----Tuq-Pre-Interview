@@ -1,0 +1,165 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+background: linear-gradient(to right, #ff7e5f, #feb47b, #86a8e7);
+  
+  color: rgb(13, 7, 51);
+}
+
+h1 {
+  text-align: center;
+  
+}
+
+
+.board {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 200px 200px 200px;
+  cursor: pointer;
+  position: relative;
+}
+
+.tile {
+  color: currentColor;
+  font-size: 8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ .right-border {
+  border-right: 0.2em solid #0074a6;
+}
+
+.bottom-border {
+  border-bottom: 0.2em solid #0074a6;
+}
+
+.x-hover:hover::after {
+  content: "X";
+  opacity: 0.4;
+}
+
+.o-hover:hover::after {
+  content: "O";
+  opacity: 0.4;
+}
+
+.strike {
+  position: absolute;
+  background-color: rgb(200, 84, 84);
+}
+
+.strike-row-1 {
+  width: 100%; /* Initially, the width is 0 */
+  height: 15px;
+  top: 15%;
+  background-color: rgb(200, 84, 84);
+}
+
+
+
+.strike-row-2 {
+  width: 100%;
+  height: 15px;
+  top: 48%;
+}
+.strike-row-3 {
+  width: 100%;
+  height: 15px;
+  top: 83%;
+}
+.strike-column-1 {
+  height: 100%;
+  width: 15px;
+  left: 11.4%;
+}
+.strike-column-2 {
+  height: 100%;
+  width: 15px;
+  left: 39%;
+}
+.strike-column-3 {
+  height: 100%;
+  width: 15px;
+  left: 68.5%;
+}
+.strike-diagonal-1 {
+  width: 100%; /* Ensure full width for the diagonal line */
+  height: 15px; /* Slightly thinner line */
+  top: 0%;
+  left: 0; /* Start from the far left */
+  transform: rotate(45deg); /* Rotate to form the diagonal line */
+  transform-origin: left; /* Start the rotation from the left */
+  background-color: rgb(200, 84, 84); /* The color of the strike */
+}
+
+.strike-diagonal-2 {
+  width: 100%; /* Ensure full width for the diagonal line */
+  height: 15px;
+  top: 95%;
+  left: 0; /* Start the line at the far left */
+  transform: rotate(-45deg); /* Rotate to form a diagonal line */
+  transform-origin: left; /* Set the starting point to the left */
+  background-color: rgb(200, 84, 84); /* The color of the strike */
+}
+
+
+.game-over {
+  text-align: center;
+  border: 8px dotted #5468ff;
+  padding: 20px;
+  margin-top: 50px;
+  font-weight: 600;
+  font-size: 2em;
+  background: linear-gradient(135deg, #0a6c73, #b02206); /* Gradient background */
+  color: white;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  animation: pulse 1.5s infinite; /* Pulsing animation */
+  transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+.game-over:hover {
+  transform: scale(1.05); /* Slight scale-up on hover */
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+
+
+.reset-button {
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #0074a6;
+  color: white;
+  width: 100%;
+  font-size: 1.5em;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+} 
+
+.reset-button:hover {
+  background-color: #2a9e49; /* Darker shade on hover */
+  transform: scale(1.05); /* Slight scale-up effect */
+  box-shadow: 0 4px 8px rgba(57, 217, 121, 0.411); /* Adding shadow effect */
+}
