@@ -17,5 +17,7 @@ This is a simple **Tic Tac Toe** game built with React, developed as part of the
 - **JavaScript**: The primary programming language used.
 - **Git**: Version control to manage and track the code.
 
-## Project Structure
+## Project Sample Link, deployed with AWS Amplify
+
+https://master.d3pxy246tpzm48.amplifyapp.com/
 
